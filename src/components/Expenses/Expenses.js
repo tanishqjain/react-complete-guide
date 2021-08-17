@@ -1,9 +1,16 @@
 import ExpenseItem from "./ExpenseItem";
-import './Expenses.css'
+import ExpensesFilter from "./ExpensesFilter";
+import "./Expenses.css";
 
-function Expenses(props){
-    return(
-        <div className='expenses'>
+function Expenses(props) {
+
+  function getSelectedYear(selectedYear){
+    console.log(selectedYear)
+  }
+
+  return (
+      <div className="expenses">
+      <ExpensesFilter onSelectingYear={getSelectedYear}/>
       <ExpenseItem
         title={props.expenses[0].title}
         amount={props.expenses[0].amount}
@@ -25,7 +32,7 @@ function Expenses(props){
         date={props.expenses[3].date}
       ></ExpenseItem>
     </div>
-    )
+  );
 }
 
-export default Expenses
+export default Expenses;
