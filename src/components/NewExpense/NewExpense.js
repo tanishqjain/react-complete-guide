@@ -8,7 +8,7 @@ const NewExpense = (prop)=>{
             ...enteredExpenseData,
             id: Math.random().toString()
         }
-        prop.saveExpenseDataHandler(expenseData)
+        prop.onSaveExpenseData(expenseData)
     }
 
     return (
